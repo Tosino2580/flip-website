@@ -82,7 +82,7 @@ function Testimonial() {
           <div key={index} className=''>
             <div className='w-90 md:w-100 h-50 md:h-60 shadow-xl rounded-lg space-y-4 md:space-y-9'> 
               <p className='px-4 text-sm md:text-md mt-4 text-gray-500'>{test.desc}</p>
-              <div className='mt-16 px-5'>
+              <div className='mt-3 px-5'>
                 <h1 className='text-sm md:text-md font-bold'>{test.name}</h1>
                 
               </div>
