@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { CiTwitter } from 'react-icons/ci'
 import { BsInstagram } from 'react-icons/bs'
 import { TbPhoneCall } from 'react-icons/tb'
+import CustomerCare from '/src/assets/customer-service-representative.jpg'
 
 const ContactUs = () => {
   return (
@@ -12,12 +13,12 @@ const ContactUs = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 px-10  md:px-25 pt-10'>
         <div className='w-80 md:w-2/3 flex flex-col gap-10 md:ml-18 items-center mt-3 md:sticky md:top-28 md:self-start md:h-max'>
           <h1 className='text-2xl md:text-4xl font-extrabold'>Contact the FLIP Team</h1>
-          <p className='text-xl'>Thank you for your interest in <b>Film in the Park (FLIP)</b>. We value clear communication and are always open to hearing fro  our audience, partners, and supporters. Whether you have a question about the event, are interested in collaboration opportunities, or simply wish to connect with our team, we welcome your outreach.</p>
-          <p className='text-xl'>Feel free to reach out to us via phone ot through our socail media platforms. Every message is important to us, and we strive to respond promptly and professionally.</p>
+          <p className='text-xl'>Thank you for your interest in <b>Film in the Park (FLIP)</b>. We value clear communication and are always open to hearing from  our audience, partners, and supporters. Whether you have a question about the event, are interested in collaboration opportunities, or simply wish to connect with our team, we welcome your outreach.</p>
+          <p className='text-xl'>Feel free to reach out to us via phone or through our social media platforms. Every message is important to us, and we strive to respond promptly and professionally.</p>
           <p className='text-xl'>We look forward to connecting with you and continuing to build a vibrant and inclusive FLIP experience for all.</p>
         </div>
         <div>
-          <img className='w-full rounded-2xl mt-10 md:mt-0' src="/src/assets/customer-service-representative.jpg" alt="" />
+          <img className='w-full rounded-2xl mt-10 md:mt-0' src={CustomerCare} alt="" />
           <div className='grid grid-cols-1 md:grid-cols-2 mt-15 gap-9'>
             <div className='flex flex-col gap-3 py-5 px-4 bg-[linear-gradient(180deg,_rgba(220,240,255,1)_0%,_white_40%,_white_60%,_rgba(225,240,255,1)_100%)] rounded-xl hover:shadow-gray-700'>
               <IoChatbubble size={'40px'} className=' px-1 bg-blue-500 text-white rounded-xl ' />

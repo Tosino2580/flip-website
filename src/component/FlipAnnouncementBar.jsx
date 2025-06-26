@@ -8,7 +8,7 @@ const FlipAnnouncementBar = () => {
         {`
           @keyframes marquee {
             0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
+            100% { transform: translateX(-100%); }
           }
         `}
       </style>
@@ -24,11 +24,12 @@ const FlipAnnouncementBar = () => {
           <div
             className="flex whitespace-nowrap font-medium text-sm md:text-base animate-marquee"
             style={{
-              animation: 'marquee 12s linear infinite',
+              width: '200%', 
+              animation: 'marquee 20s linear infinite',
             }}
           >
             {/* First copy */}
-            <span className="mx-4">
+            <span className="mx-4 md:w-full">
               📅 Date & Venue | To be Determined... &nbsp;&nbsp;&nbsp;
               🎬 FLIP 2.0: A bigger, bolder, more immersive celebration of storytelling and creativity.
               🎉 Join filmmakers, artists & dreamers across Africa 🌍 
@@ -36,7 +37,7 @@ const FlipAnnouncementBar = () => {
             </span>
 
             {/* Second copy (for seamless loop) */}
-            <span className="mx-4">
+            <span className="mx-4 md:w-full">
               📅 Date & Venue | To be Determined... &nbsp;&nbsp;&nbsp;
               🎬 FLIP 2.0: A bigger, bolder, more immersive celebration of storytelling and creativity.
               🎉 Join filmmakers, artists & dreamers across Africa 🌍 

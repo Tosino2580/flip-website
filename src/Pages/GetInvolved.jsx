@@ -16,7 +16,7 @@ function GetInvolved() {
           </div>
           <div className='space-y-5'>
             <h1 className='text-2xl font-bold uppercase'>Why Get Invovled?</h1>
-            <p>Getting involved with FLIP gives you the opportunity to build and be a part of a community looking to immerse themselves in the world of film, be it appreciating </p>
+            <p>Getting involved with FLIP gives you the opportunity to build and be a part of a community looking to immerse themselves in the world of film. </p>
           </div>
           <div className='space-y-5'>
             <h1 className='text-2xl font-bold uppercase'>Partner with us</h1>
@@ -42,11 +42,14 @@ function GetInvolved() {
           <div className='space-y-4'>
             <h1 className='text-2xl font-bold uppercase'>Join the Team</h1>
             <p>FLIP needs YOUR unique skills to make the dream come alive.
-              If you are any of the role below Or you would love to serve as any of the role below, <Link to='https://wa.me/qr/NO6SSX4YNVBXG1'><button className='rounded-2xl px-3 bg-blue-500 text-white capitalize'>click here</button></Link>   to be a part of our Volunteers. <br />
-              - Graphics designer <br />
-              -Partnerships and sponsorships facilitator manager <br />
-              -Social media manager <br />
-              -Video editor
+              If you possess any of the skills listed below <br />
+              - <b>Graphic Designer</b> <br />
+              - <b>Partnerships and Sponsorships Facilitator Manager</b> <br />
+              - <b>Social Media Manager</b> <br />
+              - <b>Video Editor</b>
+              <br />
+              <br />
+               <Link to='https://wa.me/qr/NO6SSX4YNVBXG1'><button className='rounded-2xl px-3 bg-blue-500 text-white capitalize'>click here</button></Link>   to be a part of our Volunteers. <br />
             </p>
           </div>
         </div>

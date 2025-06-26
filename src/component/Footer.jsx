@@ -17,7 +17,7 @@ function Footer() {
         </div>
         <div className='mb-4 mr-[-1]  mt-10 md:mt-0 flex flex-col items-start md:items-center justify-center'>
           <Link to={'/'}>
-            <h1 className='text-3xl font-extrabold text-white text-center mb-10 hidden md:block '>FLIP</h1>
+            <h1 className='text-3xl font-extrabold text-white text-center mb-10 hidden md:block md:mr-7 '>FLIP</h1>
           </Link>
           <ul className='flex flex-col gap-2 md:gap-2 mr-[-0px]  '>
             <li className='text-white md:text-lg hover:text-blue-900 cursor-pointer'><Link to={'/about us'}>About us</Link></li>
@@ -27,7 +27,7 @@ function Footer() {
           </ul>
         </div>
         <div className='space-y-4 mb-10 md:mb-0 flex flex-col items-start md:items-center justify-center'>
-          <h1 className='text-l font-semibold text-white hidden md:block'>Follow us</h1>
+          <h1 className='text-lg font-semibold text-white hidden md:block md:mr-4'>Follow us</h1>
           <div className='flex gap-3'>
             <Link to={'https://www.instagram.com/officialfilminthepark_?igsh=MW0yaDdyM3F4Y2Y2OQ=='}><FaInstagram className='text-3xl text-white hover:text-blue-900' /></Link>
             <Link to={'https://x.com/Filminthepark?t=FxniPReY-r5H1F0wSA3FUQ&s=09'}><FaTwitter className='text-3xl text-white hover:text-blue-900' /></Link>
@@ -37,7 +37,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className='text-center text-sm text-white'>
+      <div className='text-center text-sm text-white mt-5'>
         <p>&copy;{new Date().getFullYear()}FLIP . All right Reserved</p>
       </div>
 

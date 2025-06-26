@@ -53,7 +53,7 @@ export const OurTeam = [
     {
         image: Dunsi,
         desc: 'Oluwadunsin Favour Otun is the lead event planner of Dunnii’s Event. She has over 3 years experience in the event industry having played an active role in diverse capacities. She also doubles as an HR and Admin Analyst in the energy industry. ',
-        name: 'DUNSI OTUN',
+        name: 'DUNSIN OTUN',
         title: 'EVENT MANAGER',
 
     },

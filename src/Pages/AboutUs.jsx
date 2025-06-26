@@ -34,7 +34,7 @@ function AboutUs() {
       <div className='flex flex-col md:flex-row'>
         <div className=' '>
           <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.5, once: true }} variants={textVariant} className='flex flex-col justify-center items-center p-6 md:p-0  md:mt-40 space-y-4'>
-            <p className='text-sm md:text-2xl text-black w-85 md:w-200  px-10'>Some people have shared their experiences growing up, how they often found themselves mimicking actors from the films they watched, adopting their walks and accents, captivated by their stories. This personal experience underscores the effect films have on our lives, even at a surface level.</p>
+            <p className='text-sm md:text-2xl text-black w-100 md:w-200  px-10'>Some people have shared their experiences growing up, how they often found themselves mimicking actors from the films they watched, adopting their walks and accents, captivated by their stories. This personal experience underscores the effect films have on our lives, even at a surface level.</p>
           </motion.div>
         </div>
         <div>
@@ -56,7 +56,7 @@ function AboutUs() {
         </p>
       </div>
       <div className='mt-8 px-10'>
-        <h1 className='text-4xl md:text-5xl font-bold font-serif text-blue-600 text-center'>Our Teams</h1>
+        <h1 className='text-4xl md:text-5xl font-bold font-serif text-blue-600 text-center'>Our Team</h1>
       </div>
       <div className='mt-15 grid grid-col md:grid-cols-3 gap-5 w- px-5 md:px-10 '>
         {OurTeam.map((item, index) => (
