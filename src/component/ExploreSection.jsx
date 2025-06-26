@@ -11,7 +11,7 @@ function ExploreSection() {
         title=" Filmmakers"
         imageUrl={cinema}
         description={`Are you a filmmaker with a passion for storytelling?\nThis is your chance to share your unique vision with the world.\nSubmit your short film to be showcased in our community park cinema.\nAll genres and styles welcome.`}
-        link="/submit"
+        link=""
         buttonText="Submit Now →"
       />
 
@@ -19,7 +19,7 @@ function ExploreSection() {
         title=" Attend Events"
         imageUrl={attendEvent}
         description={`Join an unforgettable outdoor cinema experience.\nWatch inspiring films under the stars with fellow creatives and film lovers.\nOur events feature Q&A sessions, food trucks, and networking moments.`}
-        link="/events"
+        link=""
         buttonText="View Events →"
       />
 
@@ -27,7 +27,7 @@ function ExploreSection() {
         title=" Volunteer"
         imageUrl={volunteer}
         description={`Be part of something magical.\nHelp us create memorable film nights by joining our crew.\nGain hands-on experience in event setup, crowd coordination, and more.`}
-        link="/volunteer"
+        link=""
         buttonText="Join Us →"
       />
     </div>

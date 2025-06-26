@@ -49,7 +49,7 @@ function GetInvolved() {
               - <b>Video Editor</b>
               <br />
               <br />
-               <Link to='https://wa.me/qr/NO6SSX4YNVBXG1'><button className='rounded-2xl px-3 bg-blue-500 text-white capitalize'>click here</button></Link>   to be a part of our Volunteers. <br />
+               <Link to='https://www.instagram.com/officialfilminthepark_?igsh=MW0yaDdyM3F4Y2Y2OQ=='><button className='rounded-2xl px-3 bg-blue-500 text-white capitalize cursor-pointer active:bg-blue-900 hover:bg-blue-700'>click here</button></Link>   to be a part of our Volunteers. <br />
             </p>
           </div>
         </div>
