@@ -26,7 +26,7 @@ function Footer() {
             <li className='text-white md:text-lg hover:text-blue-900 cursor-pointer'><Link to={'/contact us'}>Contact us</Link></li>
           </ul>
         </div>
-        <div className='space-y-4 mb-10 md:mb-0 flex flex-col items-start md:items-center justify-center'>
+        <div className='space-y-4 mb-10 md:mb-0 flex flex-col items-start md:items-center justify-start'>
           <h1 className='text-lg font-semibold text-white hidden md:block md:mr-4'>Follow us</h1>
           <div className='flex gap-3'>
             <Link to={'https://www.instagram.com/officialfilminthepark_?igsh=MW0yaDdyM3F4Y2Y2OQ=='}><FaInstagram className='text-3xl text-white hover:text-blue-900' /></Link>
