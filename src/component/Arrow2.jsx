@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Arrow2() {
   return (
@@ -19,11 +20,12 @@ function Arrow2() {
           }
         `}
       </style>
-
-      <button className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-800 transition cursor-pointer">
-        <span>Submit Film</span>
-        <span className="arrow-dance">→</span>
-      </button>
+      <Link to={'https://filmfreeway.com/FilmInThePark'}>
+        <button className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-800 transition cursor-pointer">
+          <span>Submit Film</span>
+          <span className="arrow-dance">→</span>
+        </button>
+      </Link>
     </>
   );
 }

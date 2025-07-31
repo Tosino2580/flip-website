@@ -25,7 +25,7 @@ function GetInvolved() {
               <Link to="mailto:thisisfilminthepark@gmail.com">
                 <div className='flex items-center gap-2'>
                   <FaEnvelope className='text-red-400' />
-                  <p>thisisfilminthepark@gmail.com</p>
+                  <p className='text-blue-600'>thisisfilminthepark@gmail.com</p>
                 </div>
               </Link>
               </p>

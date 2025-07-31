@@ -30,6 +30,27 @@ function Blog() {
           readTime={12}
           postUrl="https://www.brandtimes.com.ng/film-in-the-park-holds-august-24-heres-why-you-shouldnt-miss-it/"
         />
+        <BlogCard
+          title="A Sabi Experience’: Film in the Park 2.0 Festival Set for September 21 "
+          excerpt="The highly anticipated second edition of the Film in the Park (FLIP) Festival is scheduled for Sunday, September 21, 2025, at the iconic Freedom Park on Broad Street, Lagos Island. The event runs from 4 p.m. to 7 p.m., promising an afternoon filled with cinematic magic, vibrant performances, and community engagement."
+          date="July 30, 2025"
+          readTime={2}
+          postUrl="https://www.brandtimes.com.ng/a-sabi-experience-film-in-the-park-2-0-festival-set-for-september-21/"
+        />
+        <BlogCard
+          title="Film in the Park 2.0 Festival holds on September 21.✓✓✓Newzspy Entertainment. "
+          excerpt="Tomiwa Precious Otun, a budding Film producer and lead organizer of the FLIP 2.0 film festival further stated, “The Film in the Park (FLIP)2.0 edition is themed “ A Sabi Experience” dedicated to further uncovering and showcasing emerging talent and diverse voices within the film industry."
+          date="July 29, 2025"
+          readTime={7}
+          postUrl="https://newzspy.ng/2025/07/29/film-in-the-park-2-0-festival-holds-on-september-21-%e2%9c%93%e2%9c%93%e2%9c%93newzspy-entertainment/"
+        />
+        <BlogCard
+          title="Film In The Park 2.0 Festival holds On September 21"
+          excerpt="The Film in the Park 2.0 festival again seeks to reignite that magic, showcasing the works of emerging filmmakers who want to share your love for cinema and storytelling."
+          date="July 28, 2025"
+          readTime={4}
+          postUrl="https://thelegendnewsng.com/film-in-the-park-2-0-festival-holds-on-september-21/"
+        />
 
       </div>
     </div>
