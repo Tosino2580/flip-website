@@ -37,29 +37,37 @@ const NewsletterCTA = () => {
       email: email,
       subscription_date: subscriptionDate,
       source: "Website Newsletter Signup",
-      messageContent: `Hey there, film lover!
+      messageContent: `Hey film lover,
 
-Welcome to the F.L.I.P family! 🎉
-Since you're here, you're clearly someone who believes in the power of storytelling, and we're absolutely thrilled to have you join our community.
+We’re so glad you’re here.
 
-🎬 What is F.L.I.P?
-F.L.I.P (Film In The Park) was born from a simple but powerful idea: to document and illuminate our lives through film. We're more than just an event – we're a safe space where filmmakers and film enthusiasts like you can tell authentic stories and change narratives, one frame at a time.
+If you’ve found your way to us, then you already know how powerful storytelling can be and around here, we believe stories have the ability to shift mindset, create a change, and bring people together. That’s what FLIP is all about.
 
-📽️ Our Journey So Far:
-F.L.I.P 1: 120+ attendees, 10 incredible films screened, countless connections made.
-F.L.I.P 2: Coming soon with even bigger plans (trust us, you'll want to stay tuned!).
+So, what’s FLIP?
+Short for Film In The Park. It started as a simple idea, let’s create a space where beautiful stories can be told and shared.
 
-🗞️ What to Expect in Your Inbox:
-- Latest filmmaking trends and industry insights
-- Exclusive F.L.I.P updates – be the first to know about events, screenings, and opportunities
+We’re not just screening films, we’re building a movement. A vibrant space where filmmakers and film lovers come together to watch, connect and celebrate stories that matter.
 
-✨ Ready to dive in?
-Follow us on [Social Media Links] to join daily conversations and connect with fellow storytellers.
+So far, so good:
+FLIP 1.0 brought over 120 people together. We screened 10 powerful short films and countless connections were made.
 
-We're genuinely excited to have you on this journey with us. Your story matters, and we can't wait to help you tell it.
+FLIP 2.0 is loading… and trust us, it’s going to be even better. (You’ll be the first to know 😉)
 
-Love,
-The F.L.I.P Team`
+Here’s what you can expect from us:
+
+• Film industry updates and real talk on trends
+
+• Early scoop on FLIP events, screenings, and opportunities
+
+• Stories worth sharing from us, and maybe even from you
+
+
+Kindly Follow us @Officialfilminthepark_ on all social media platforms, so you don’t miss a thing.
+
+Thanks again for joining us.
+
+With love,
+The FLIP Team`
     };
 
     try {
@@ -120,11 +128,10 @@ The F.L.I.P Team`
 
         <button
           type="submit"
-          className={`px-6 py-3 w-[200px] text-lg font-semibold rounded-md transition-colors focus:outline-none cursor-pointer focus:ring-2 focus:ring-black focus:ring-offset-2 ${
-            isSubscribed
-              ? "bg-black hover:bg-black text-white"
-              : "bg-[#1F45FC] hover:bg-blue-900 text-white"
-          }`}
+          className={`px-6 py-3 w-[200px] text-lg font-semibold rounded-md transition-colors focus:outline-none cursor-pointer focus:ring-2 focus:ring-black focus:ring-offset-2 ${isSubscribed
+            ? "bg-black hover:bg-black text-white"
+            : "bg-[#1F45FC] hover:bg-blue-900 text-white"
+            }`}
           disabled={isSubscribed || isLoading}
         >
           {isLoading ? (
