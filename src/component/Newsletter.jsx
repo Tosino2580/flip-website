@@ -70,16 +70,29 @@ With love,
 The FLIP Team`
     };
 
-    try {
-      // Send welcome email to the subscriber
-      const response = await emailjs.send(
+        try {
+      // 1. Subscribe email to Mailchimp via API Route
+      const subscribeResponse = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const subscribeResult = await subscribeResponse.json();
+
+      if (!subscribeResponse.ok) {
+        throw new Error(subscribeResult.message || 'Mailchimp subscription failed');
+      }
+
+      // 2. Send welcome email to the subscriber via EmailJS
+      const welcomeEmail = await emailjs.send(
         emailjsConfig.serviceId,
         emailjsConfig.templates.newsletterMessage,
         templateParams,
         emailjsConfig.publicKey
       );
 
-      // Send notification email to FLIP team
+      // 3. Send notification email to FLIP team via EmailJS
       const notification = await emailjs.send(
         emailjsConfig.serviceId,
         emailjsConfig.templates.newsletterNotification,
@@ -90,8 +103,8 @@ The FLIP Team`
         emailjsConfig.publicKey
       );
 
-      // Success feedback
-      if (response.status === 200) {
+      // 4. Success feedback
+      if (welcomeEmail.status === 200) {
         setIsSubscribed(true);
         toast.success("Thank you for subscribing!");
         setEmail("");
@@ -102,11 +115,12 @@ The FLIP Team`
       }
 
     } catch (error) {
-      console.error("EmailJS Error:", error);
-      toast.error("Subscription failed. Please try again later.");
+      console.error("Subscription Error:", error);
+      toast.error(error.message || "Subscription failed. Please try again later.");
     } finally {
       setIsLoading(false);
     }
+
   };
 
   return (
