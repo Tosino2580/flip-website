@@ -51,6 +51,27 @@ function Blog() {
           readTime={4}
           postUrl="https://thelegendnewsng.com/film-in-the-park-2-0-festival-holds-on-september-21/"
         />
+        <BlogCard
+          title="Flip Festival 2.0 Bigger, Bolder, Impactful –Convener"
+          excerpt="The convener of Film in the Park(FLIP) Festival, Tomiwa Precious Otun, has said that the second edition of the initiative, billed for Sunday, September 21, promises to be bigger, bolder and more impactful."
+          date="August 2, 2025"
+          readTime={3}
+          postUrl="https://newtelegraphng.com/flip-festival-2-0-bigger-bolder-impactful-convener/"
+        />
+        <BlogCard
+          title="Film in the Park Festival to Organise Screenings, Live Performances"
+          excerpt="The Film in the Park (FLIP) second edition will feature over 10 film screenings, live performances, story telling, and community engagement."
+          date="August 15, 2025"
+          readTime={6}
+          postUrl="https://www.thisdaylive.com/2025/08/02/film-in-the-park-festival-to-organise-screenings-live-"
+        />
+        <BlogCard
+          title="Film In The Park 2.0 Festival holds On September 21"
+          excerpt="The Film in the Park (FLIP) second edition is scheduled to hold on September 21, 2025 at Freedom Park, Broad Street, Lagos Island. "
+          date="August 18, 2025"
+          readTime={7}
+          postUrl="https://blueprint.ng/film-in-the-park-2-0-festival-holds-in-lagos-september-21/"
+        />
 
       </div>
     </div>
