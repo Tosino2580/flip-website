@@ -10,7 +10,7 @@ const BlogCard = ({
   return (
     <a 
       href={postUrl} 
-      className="block w-full max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 hover:border-gray-300 bg-white"
+      className="block w-full rounded-lg  overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 hover:border-gray-300 bg-white"
     >
       
       {/* Content */}
