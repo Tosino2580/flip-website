@@ -25,18 +25,18 @@ function FlipStatSection() {
         entries.forEach((entry) => {
           const index = parseInt(entry.target.dataset.index);
           if (entry.isIntersecting) {
-            // Activate the count up
+
             setActiveIndexes((prev) =>
-              prev.includes(index) ? prev : [...prev, index]
+              prev.includes(index) ? prev : [...prev, index] 
             );
           } else {
-            // Remove to reset when out of view
+
             setActiveIndexes((prev) => prev.filter((i) => i !== index));
           }
         });
       },
       {
-        threshold: 0.5, // 50% in view triggers
+        threshold: 0.5,
       }
     );
 
@@ -66,7 +66,7 @@ function FlipStatSection() {
               data-aos="zoom-in"
             >
               <div className="flex flex-col items-center">
-                {stat.icon}
+                {stat.icon} 
                 <div className="text-4xl font-extrabold mt-6 w-4/5">
                   {activeIndexes.includes(index) ? (
                     <CountUp end={stat.end} duration={2} separator="," />

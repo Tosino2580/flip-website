@@ -66,7 +66,6 @@ function NavBar() {
         <Link to="/" className="text-4xl font-bold text-black">
           <img src={Flip} alt="" className='w-30 h-15' />
         </Link>
-        {/* Desktop menu*/}
         <motion.ul
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -90,7 +89,7 @@ function NavBar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      
       {isOpen && (
         <motion.div
         ref={openRef}

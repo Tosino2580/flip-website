@@ -51,13 +51,13 @@ const ExploreFlipCard = ({ title, imageUrl, description, link, buttonText }) => 
 
       <div className="flip-card w-full max-w-sm md:ml-12">
         <div className="flip-card-inner">
-          {/* Front */}
+          {/* Front part */}
           <div className="flip-card-front bg-blue-800  text-white rounded-xl p-6 flex flex-col items-center justify-center text-xl font-bold shadow-lg text-center">
             <img src={imageUrl} alt={title} />
             {title}
           </div>
 
-          {/* Back */}
+          {/* Back part */}
           <div className="flip-card-back bg-white rounded-xl p-6 flex flex-col justify-between shadow-lg">
             <div className="text-gray-700 text-md mb-4 space-y-2 overflow-auto">
               {description.split("\n").map((line, idx) => (

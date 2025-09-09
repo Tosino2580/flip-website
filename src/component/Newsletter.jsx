@@ -84,7 +84,7 @@ The FLIP Team`
         throw new Error(subscribeResult.message || 'Mailchimp subscription failed');
       }
 
-      // 2. Send welcome email to the subscriber via EmailJS
+      // 2. this Sends welcome email to the subscriber via EmailJS
       const welcomeEmail = await emailjs.send(
         emailjsConfig.serviceId,
         emailjsConfig.templates.newsletterMessage,
@@ -92,7 +92,7 @@ The FLIP Team`
         emailjsConfig.publicKey
       );
 
-      // 3. Send notification email to FLIP team via EmailJS
+      // 3.  this Sends notification email to FLIP team via EmailJS
       const notification = await emailjs.send(
         emailjsConfig.serviceId,
         emailjsConfig.templates.newsletterNotification,
@@ -103,7 +103,7 @@ The FLIP Team`
         emailjsConfig.publicKey
       );
 
-      // 4. Success feedback
+      // 4. this is the Success feedback the user get on thier screen
       if (welcomeEmail.status === 200) {
         setIsSubscribed(true);
         toast.success("Thank you for subscribing!");
