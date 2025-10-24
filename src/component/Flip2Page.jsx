@@ -120,7 +120,7 @@ const Flip2Page = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section
         <section className="bg-blue-100 py-12 px-6 text-center">
           <h2 className="text-2xl font-bold mb-4 text-blue-900">🎟️ Ready to Experience It?</h2>
           <p className="text-lg mb-6">Grab your tickets now before it sells out!</p>
@@ -132,7 +132,7 @@ const Flip2Page = () => {
           >
             Get Your Ticket →
           </a>
-        </section>
+        </section> */}
 
         {/* Contact & Sponsorship */}
         <section className="py-10 px-6 text-center">

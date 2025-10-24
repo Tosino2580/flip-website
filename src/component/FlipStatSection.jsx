@@ -10,11 +10,11 @@ function FlipStatSection() {
   const statRefs = useRef([]);
 
   const stats = [
-    { label: 'Films Screened', end: 8, icon: <FaFilm size={20} /> },
-    { label: 'Attendees', end: 120, icon: <FaUsers size={20} /> },
-    { label: 'Artist', end: 3, icon: <FaPalette size={20} /> },
-    { label: 'Live Performances', end: 3, icon: <FaMicrophone size={20} /> },
-    { label: 'Impressions', end: 20000, icon: <FaEye size={20} /> },
+    { label: 'Films Screened', end: 17, icon: <FaFilm size={20} /> },
+    { label: 'Attendees', end: 370, icon: <FaUsers size={20} /> },
+    { label: 'Artist', end: 5, icon: <FaPalette size={20} /> },
+    { label: 'Live Performances', end: 4, icon: <FaMicrophone size={20} /> },
+    { label: 'Impressions', end: 73343, icon: <FaEye size={20} /> },
   ];
 
   useEffect(() => {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Pictures } from '../../PictureData/Picture';
-import Footer from '../component/Footer';
+import { Pictures } from '../../../PictureData/Picture';
+import Footer from '../../component/Footer';
 
-function Gallery() {
+function Flip() {
   const [currentPage, setCurrentPage] = useState(1);
   const imagesPerPage = 15;
 
@@ -19,7 +19,7 @@ function Gallery() {
 
   return (
     <div className='mt-30'>
-      {/* Images */}
+      {/* images on the page */}
       <div className='grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 px-3 md:px-7'>
         {currentImages.map((item, index) => (
           <div key={index}>
@@ -32,7 +32,7 @@ function Gallery() {
         ))}
       </div>
 
-      {/* Pagination buttons */}
+      {/* next buttons */}
       <div className='flex justify-center mt-6 space-x-2'>
         {[...Array(totalPages)].map((_, index) => (
           <button
@@ -54,4 +54,4 @@ function Gallery() {
   );
 }
 
-export default Gallery;
+export default Flip;
