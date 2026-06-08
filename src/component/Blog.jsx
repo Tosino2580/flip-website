@@ -3,10 +3,21 @@ import BlogCard from '../../Teamdata/BlogCard';
 
 function Blog() {
   return (
-    <div>
-      <h1 className='text-center text-2xl md:text-4xl font-bold mb-7'>Media Mentions</h1>
+    <section className="py-24 bg-cinema-dark border-b border-white/5">
+      <div className="max-w-[1450px] w-11/12 md:w-4/5 mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-cinema-gold text-xs font-bold uppercase tracking-widest block mb-3">
+            In The Press
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black font-serif text-white tracking-tight">
+            Media Mentions
+          </h2>
+          <p className="text-gray-400 mt-4 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+            Read what the press has to say about FLIP's vision to empower emerging filmmakers and build spaces for storytelling.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <BlogCard
           title="FLIP poises to change narratives as maiden edition holds Saturday"
           excerpt="Lead organiser of the festival and a budding film producer, Precious Tomiwa Orun, who made this known, said the Film in the Park Festival seeks to showcase the works of emerging filmmakers who want to share their love for cinema and storytelling."
@@ -72,9 +83,9 @@ function Blog() {
           readTime={7}
           postUrl="https://blueprint.ng/film-in-the-park-2-0-festival-holds-in-lagos-september-21/"
         />
-
       </div>
-    </div>
+      </div>
+    </section>
   );
 }
 

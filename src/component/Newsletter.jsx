@@ -9,12 +9,10 @@ const NewsletterCTA = () => {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Email validation function
   const isValidEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  // Form submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -32,7 +30,6 @@ const NewsletterCTA = () => {
       day: "numeric",
     });
 
-    // Shared data for both templates
     const templateParams = {
       email: email,
       subscription_date: subscriptionDate,
@@ -51,7 +48,7 @@ We’re not just screening films, we’re building a movement. A vibrant space w
 So far, so good:
 FLIP 1.0 brought over 120 people together. We screened 10 powerful short films and countless connections were made.
 
-FLIP 2.0 is loading… and trust us, it’s going to be even better. (You’ll be the first to know 😉)
+FLIP 3.0 is coming soon… and trust us, it’s going to be even better. (You’ll be the first to know 😉)
 
 Here’s what you can expect from us:
 
@@ -71,7 +68,6 @@ The FLIP Team`
     };
 
         try {
-      // 1. Subscribe email to Mailchimp via API Route
       const subscribeResponse = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -84,7 +80,6 @@ The FLIP Team`
         throw new Error(subscribeResult.message || 'Mailchimp subscription failed');
       }
 
-      // 2. this Sends welcome email to the subscriber via EmailJS
       const welcomeEmail = await emailjs.send(
         emailjsConfig.serviceId,
         emailjsConfig.templates.newsletterMessage,
@@ -92,7 +87,6 @@ The FLIP Team`
         emailjsConfig.publicKey
       );
 
-      // 3.  this Sends notification email to FLIP team via EmailJS
       const notification = await emailjs.send(
         emailjsConfig.serviceId,
         emailjsConfig.templates.newsletterNotification,
@@ -103,7 +97,6 @@ The FLIP Team`
         emailjsConfig.publicKey
       );
 
-      // 4. this is the Success feedback the user get on thier screen
       if (welcomeEmail.status === 200) {
         setIsSubscribed(true);
         toast.success("Thank you for subscribing!");
@@ -128,12 +121,12 @@ The FLIP Team`
       <ToastContainer />
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 justify-center max-w-md mx-auto"
+        className="flex flex-col sm:flex-row gap-3 items-center w-full max-w-md"
       >
         <input
           type="email"
           placeholder="Enter your email"
-          className="flex-grow w-[300px] px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black bg-white"
+          className="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cinema-gold focus:ring-1 focus:ring-cinema-gold transition-colors duration-300 text-sm"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -142,10 +135,11 @@ The FLIP Team`
 
         <button
           type="submit"
-          className={`px-6 py-3 w-[200px] text-lg font-semibold rounded-md transition-colors focus:outline-none cursor-pointer focus:ring-2 focus:ring-black focus:ring-offset-2 ${isSubscribed
-            ? "bg-black hover:bg-black text-white"
-            : "bg-[#1F45FC] hover:bg-blue-900 text-white"
-            }`}
+          className={`w-full sm:w-auto px-6 py-3 text-sm font-bold tracking-wider uppercase rounded-lg transition-all duration-300 focus:outline-none cursor-pointer whitespace-nowrap ${
+            isSubscribed
+              ? "bg-emerald-600 hover:bg-emerald-700 text-white"
+              : "bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-300 hover:to-blue-500 text-white"
+          }`}
           disabled={isSubscribed || isLoading}
         >
           {isLoading ? (

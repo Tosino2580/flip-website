@@ -5,7 +5,6 @@ import AboutUs from './Pages/AboutUs'
 import NavBar from './component/NavBar'
 import ContactUs from './Pages/ContactUs'
 import GetInvolved from './Pages/GetInvolved'
-// import FlipAnnouncementBar from './component/FlipAnnouncementBar'
 import Flip2Page from './component/Flip2Page'
 import ScrollToTop from './component/ScrollToTop'
 import Flip from './Pages/GalleryPages/Flip1'
@@ -18,7 +17,6 @@ function App() {
   <Router>
     <ScrollToTop/>
     <NavBar/>
-    {/* <FlipAnnouncementBar/> */}
     <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/about us' element={<AboutUs/>}></Route>
