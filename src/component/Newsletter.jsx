@@ -68,16 +68,26 @@ The FLIP Team`
     };
 
         try {
-      const subscribeResponse = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
+      // Attempt Mailchimp subscription — non-blocking if it fails
+      try {
+        const subscribeResponse = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
 
-      const subscribeResult = await subscribeResponse.json();
+        // Safely parse JSON (server might return HTML on misconfiguration)
+        let subscribeResult = {};
+        const contentType = subscribeResponse.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+          subscribeResult = await subscribeResponse.json();
+        }
 
-      if (!subscribeResponse.ok) {
-        throw new Error(subscribeResult.message || 'Mailchimp subscription failed');
+        if (!subscribeResponse.ok) {
+          console.warn('Mailchimp subscription warning:', subscribeResult.message || 'Non-OK response');
+        }
+      } catch (mailchimpError) {
+        console.warn('Mailchimp call failed (non-critical):', mailchimpError.message);
       }
 
       const welcomeEmail = await emailjs.send(
