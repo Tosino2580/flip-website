@@ -40,6 +40,7 @@ function NavBar() {
         { name: "FLIP 2.0", link: "/gallery/flip2" },
       ],
     },
+    { name: "FLIP 3.0", link: "/flip-3.0", badge: "NEW" },
     { name: "Get Involved", link: "/get involved" },
     { name: "Contact us", link: "/contact us" },
   ];
@@ -69,7 +70,14 @@ function NavBar() {
                     isActive(link.link) ? "text-cinema-gold font-bold" : "text-gray-300 hover:text-white"
                   }`}
                 >
-                  {link.name}
+                  <span className="flex items-center gap-1.5">
+                    {link.name}
+                    {link.badge && (
+                      <span className="text-[9px] font-black tracking-widest px-1.5 py-0.5 rounded-full bg-cinema-gold text-white animate-pulse">
+                        {link.badge}
+                      </span>
+                    )}
+                  </span>
                   {isActive(link.link) && (
                     <motion.div
                       layoutId="activeDot"
@@ -172,11 +180,16 @@ function NavBar() {
                       <Link
                         to={link.link}
                         onClick={() => setIsOpen(false)}
-                        className={`block py-1 transition-colors duration-300 ${
+                        className={`flex items-center gap-2 py-1 transition-colors duration-300 ${
                           isActive(link.link) ? "text-cinema-gold font-bold" : "text-gray-300 hover:text-white"
                         }`}
                       >
                         {link.name}
+                        {link.badge && (
+                          <span className="text-[9px] font-black tracking-widest px-1.5 py-0.5 rounded-full bg-cinema-gold text-white">
+                            {link.badge}
+                          </span>
+                        )}
                       </Link>
                     ) : (
                       <>

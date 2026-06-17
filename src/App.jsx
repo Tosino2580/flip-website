@@ -9,6 +9,8 @@ import Flip2Page from './component/Flip2Page'
 import ScrollToTop from './component/ScrollToTop'
 import Flip from './Pages/GalleryPages/Flip1'
 import Flip2 from './Pages/GalleryPages/Flip2'
+import Flip3Page from './Pages/Flip3Page'
+import AnnouncementModal from './component/AnnouncementModal'
 
 
 
@@ -16,6 +18,7 @@ function App() {
  return(
   <Router>
     <ScrollToTop/>
+    <AnnouncementModal />
     <NavBar/>
     <Routes>
       <Route path='/' element={<Home/>}></Route>
@@ -25,6 +28,7 @@ function App() {
       <Route path='/get involved' element={<GetInvolved/>}></Route>
       <Route path='/contact us' element={<ContactUs/>}></Route>
       <Route path='/flip-2.0' element={<Flip2Page/>}></Route>
+      <Route path='/flip-3.0' element={<Flip3Page/>}></Route>
     </Routes>
   </Router>
  ) 

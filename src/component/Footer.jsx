@@ -45,6 +45,11 @@ function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/flip-3.0" className="hover:text-cinema-gold transition-colors duration-300">
+                  FLIP 3.0 — Coming Soon
+                </Link>
+              </li>
+              <li>
                 <Link to="/get involved" className="hover:text-cinema-gold transition-colors duration-300">
                   Get Involved
                 </Link>
