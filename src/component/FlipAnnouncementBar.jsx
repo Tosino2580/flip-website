@@ -24,7 +24,7 @@ const FlipAnnouncementBar = () => {
   );
 
   return (
-    <div className="relative w-full bg-blue-950/90 border-b border-blue-900/30 text-xs md:text-sm py-1 px-4 flex items-center justify-between overflow-hidden shadow-md font-sans z-[200]">
+    <div className="relative w-full bg-blue-950/90 border-b border-blue-900/30 text-[10px] md:text-sm py-0.5 md:py-1 px-4 flex items-center justify-between overflow-hidden shadow-md font-sans z-[200]">
       
       {/* Left side static tag */}
       <div className="relative z-20 flex items-center bg-blue-800/80 px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-widest text-white border border-blue-500/30 shadow-sm whitespace-nowrap">

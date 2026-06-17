@@ -52,10 +52,10 @@ function NavBar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#020919]/80 backdrop-blur-md border-b border-blue-900/30 text-white shadow-2xl shadow-blue-950/50 z-50 transition-all duration-300 font-sans">
       <FlipAnnouncementBar />
-      <div className="flex justify-between items-center w-11/12 md:w-4/5 m-auto py-2.5 max-w-[1450px]">
+      <div className="flex justify-between items-center w-11/12 md:w-4/5 m-auto py-1 md:py-2.5 max-w-[1450px]">
         {/* Logo */}
         <Link to="/" className="flex items-center transition-transform duration-300 hover:scale-105">
-          <img src={Flip} alt="FLIP Logo" className="w-24 md:w-28 h-auto object-contain" />
+          <img src={Flip} alt="FLIP Logo" className="w-16 md:w-28 h-auto object-contain" />
         </Link>
 
         {/* Desktop nav-links */}

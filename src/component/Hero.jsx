@@ -46,13 +46,6 @@ export default function Hero() {
         animate="visible"
         className="relative text-center text-white px-6 max-w-4xl mx-auto z-10 space-y-6 mt-28"
       >
-        <motion.span 
-          variants={itemVariants} 
-          className="text-cinema-gold font-bold tracking-[0.25em] text-xs md:text-sm uppercase block"
-        >
-          Lagoon-side Open-Air Film Festival
-        </motion.span>
-        
         <motion.h1 
           variants={itemVariants}
           className="text-4xl md:text-8xl font-black font-serif tracking-tight text-white leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"

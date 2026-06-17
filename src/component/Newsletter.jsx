@@ -24,7 +24,7 @@ const NewsletterCTA = () => {
     setIsLoading(true);
 
     const subscriptionDate = new Date().toLocaleDateString("en-US", {
-      weekday: "short",
+      weekday: "short ",
       year: "numeric",
       month: "short",
       day: "numeric",

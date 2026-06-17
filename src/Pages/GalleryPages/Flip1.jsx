@@ -49,7 +49,7 @@ function Flip() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {currentImages.map((item, index) => (
             <motion.div
-              key={index}
+              key={item.image}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
