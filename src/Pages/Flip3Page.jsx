@@ -297,15 +297,29 @@ export default function Flip3Page() {
                 </div>
               </div>
 
-              <Link
-                to="/get involved"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-cinema-gold text-white text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(96,165,250,0.3)] hover:shadow-[0_0_50px_rgba(96,165,250,0.5)]"
-              >
-                Register Interest
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  to="/get involved"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-cinema-gold text-white text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(96,165,250,0.3)] hover:shadow-[0_0_50px_rgba(96,165,250,0.5)]"
+                >
+                  Register Interest
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+
+                <a
+                  href="https://filmfreeway.com/FilmInThePark"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/15 text-white text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform duration-300 border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_50px_rgba(255,255,255,0.15)]"
+                >
+                  Submit Film
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
