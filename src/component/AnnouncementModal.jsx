@@ -2,56 +2,126 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Flip3Img from '/src/assets/Flip3.0.jpeg';
+import flagVideo from '/src/assets/images/flip-3-flag.mp4';
 
 // Module-level flag: resets on every page refresh/reload,
 // but stays true during SPA route navigation (won't re-show when browsing pages).
 let modalAlreadyShown = false;
 
 export default function AnnouncementModal() {
-  const [visible, setVisible] = useState(false);
+  // stages: 'idle' | 'video' | 'announcement'
+  const [stage, setStage] = useState('idle');
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     if (!modalAlreadyShown) {
       // Small delay so the site renders first
       const t = setTimeout(() => {
-        setVisible(true);
+        setStage('video');
         modalAlreadyShown = true;
       }, 600);
       return () => clearTimeout(t);
     }
   }, []);
 
-  const close = () => {
-    setVisible(false);
+  const closeVideo = () => {
+    setStage('announcement');
   };
 
-  // Also close on Escape key
+  const closeAnnouncement = () => {
+    setStage('idle');
+  };
+
+  // Close active modal on Escape key
   useEffect(() => {
-    if (!visible) return;
-    const handler = (e) => { if (e.key === 'Escape') close(); };
+    if (stage === 'idle') return;
+    const handler = (e) => {
+      if (e.key === 'Escape') {
+        if (stage === 'video') {
+          closeVideo();
+        } else if (stage === 'announcement') {
+          closeAnnouncement();
+        }
+      }
+    };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [visible]);
+  }, [stage]);
 
   return (
-    <AnimatePresence>
-      {visible && (
-        <>
-          {/* ── Backdrop: blurred + darkened ── */}
+    <AnimatePresence mode="wait">
+      {/* ── STAGE 1: Video Banner Modal ── */}
+      {stage === 'video' && (
+        <React.Fragment key="video-stage">
+          {/* Backdrop: blurred + darkened */}
           <motion.div
-            key="backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            onClick={close}
+            onClick={closeVideo}
+            className="fixed inset-0 z-[900] bg-black/85 backdrop-blur-md"
+            aria-hidden="true"
+          />
+
+          {/* Modal panel container */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 15 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[901] flex items-center justify-center p-4 md:p-8 pointer-events-none"
+          >
+            <div
+              className="
+                relative pointer-events-auto
+                w-[95%] sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[55%]
+                max-h-[85vh]
+                rounded-3xl overflow-hidden
+                bg-black
+                flex items-center justify-center
+              "
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* HTML5 Video Element */}
+              <video
+                src={flagVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto max-h-[85vh] object-contain rounded-3xl"
+              />
+
+              {/* Close button — top right */}
+              <button
+                onClick={closeVideo}
+                aria-label="Close video trailer"
+                className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-black/60 border border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-200 backdrop-blur-sm z-20 text-base pointer-events-auto cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+          </motion.div>
+        </React.Fragment>
+      )}
+
+      {/* ── STAGE 2: Image Announcement Modal ── */}
+      {stage === 'announcement' && (
+        <React.Fragment key="announcement-stage">
+          {/* Backdrop: blurred + darkened */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            onClick={closeAnnouncement}
             className="fixed inset-0 z-[900] bg-black/70 backdrop-blur-md"
             aria-hidden="true"
           />
 
-          {/* ── Modal panel ── */}
+          {/* Modal panel */}
           <motion.div
-            key="modal"
             initial={{ opacity: 0, scale: 0.92, y: 32 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 20 }}
@@ -70,14 +140,13 @@ export default function AnnouncementModal() {
               "
               onClick={(e) => e.stopPropagation()}
             >
-
-              {/* ── Image hero with overlay text ── */}
-              <div className="relative w-full overflow-hidden" style={{ maxHeight: '60vh' }}>
+              {/* Image hero with overlay text */}
+              <div className="relative w-full overflow-hidden" style={{ maxHeight: '57vh' }}>
                 <img
                   src={Flip3Img}
                   alt="Film in the Park 3.0 — A Night of Magic"
                   className="w-full h-full object-cover object-center"
-                  style={{ maxHeight: '60vh' }}
+                  style={{ maxHeight: '57vh' }}
                 />
 
                 {/* Gradient overlay for text legibility */}
@@ -90,7 +159,7 @@ export default function AnnouncementModal() {
                 <div className="absolute bottom-0 inset-x-0 p-5 md:p-7 space-y-1">
                   <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-extrabold uppercase tracking-[0.25em] text-cinema-gold">
                     <span className="w-1.5 h-1.5 rounded-full bg-cinema-gold animate-pulse" />
-                    Upcoming · September 2026
+                    September 19th, 2026 &middot; 4PM
                   </span>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-serif text-white leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
                     FILM IN THE PARK{' '}
@@ -105,15 +174,15 @@ export default function AnnouncementModal() {
 
                 {/* Close button — top right of image */}
                 <button
-                  onClick={close}
+                  onClick={closeAnnouncement}
                   aria-label="Close announcement"
-                  className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-black/60 border border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-200 backdrop-blur-sm z-10 text-lg font-light"
+                  className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-black/60 border border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-200 backdrop-blur-sm z-10 text-lg font-light cursor-pointer"
                 >
                   ✕
                 </button>
               </div>
 
-              {/* ── Body copy ── */}
+              {/* Body copy */}
               <div className="px-5 md:px-8 py-5 md:py-6 space-y-4 bg-cinema-dark">
                 <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                   This September 2026, Lagos will witness an extraordinary fusion of cinema,
@@ -124,10 +193,10 @@ export default function AnnouncementModal() {
                 {/* Meta row */}
                 <div className="flex flex-wrap gap-3">
                   <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300">
-                    📍 Lagos, Nigeria
+                    📍 Freedom Park, Lagos Island
                   </span>
                   <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300">
-                    📅 September 2026
+                    📅 September 19th, 2026 · 4PM
                   </span>
                 </div>
 
@@ -135,7 +204,7 @@ export default function AnnouncementModal() {
                 <div className="flex flex-col sm:flex-row gap-3 pt-1">
                   <Link
                     to="/flip-3.0"
-                    onClick={close}
+                    onClick={closeAnnouncement}
                     className="group relative flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-widest text-xs text-white overflow-hidden hover:scale-105 transition-transform duration-300"
                   >
                     <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-700 to-blue-400" />
@@ -150,8 +219,8 @@ export default function AnnouncementModal() {
                   </Link>
 
                   <button
-                    onClick={close}
-                    className="flex-1 sm:flex-none px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest text-gray-400 border border-white/10 hover:border-white/30 hover:text-white transition-all duration-300"
+                    onClick={closeAnnouncement}
+                    className="flex-1 sm:flex-none px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest text-gray-400 border border-white/10 hover:border-white/30 hover:text-white transition-all duration-300 cursor-pointer"
                   >
                     Maybe Later
                   </button>
@@ -159,8 +228,9 @@ export default function AnnouncementModal() {
               </div>
             </div>
           </motion.div>
-        </>
+        </React.Fragment>
       )}
     </AnimatePresence>
   );
 }
+
