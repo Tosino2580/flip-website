@@ -2,10 +2,11 @@ import React from "react";
 
 const FlipAnnouncementBar = () => {
   const announcements = [
-    { text: "FLIP 3.0 IS COMING SOON", icon: "🔥" },
+    { text: "FILM IN THE PARK 3.0: THE KALEIDOSCOPE AFRICAN EXPERIENCE IS ALMOST HERE!", icon: "🌍" },
+    { text: "JOIN US ON SEPTEMBER 19TH, 2026 AT FREEDOM PARK, LAGOS ISLAND", icon: "📍" },
+    { text: "GET YOUR TICKET IN OUR SOCIAL MEDIA HANDLE OR CLICK ON THE TICKET LINK TO GET YOUR TICKET", icon: "🎟️" },
     { text: "CALL FOR FILMMAKERS: SUBMIT YOUR SHORTS & DOCUMENTARIES NOW", icon: "🎬" },
-    { text: "EXCLUSIVE VIP TICKETS & EARLY BIRD DISCOUNTS LAUNCHING NEXT WEEK", icon: "🎟️" },
-    { text: "FOLLOW US @OFFICIALFILMINTHEPARK_ ON ALL SOCIALS FOR LIVE UPDATES", icon: "🍿" }
+    { text: "FOLLOW @OFFICIALFILMINTHEPARK_ ON ALL SOCIALS FOR LIVE UPDATES", icon: "🍿" }
   ];
 
   // Render announcement item with icon and spacing

@@ -65,7 +65,7 @@ export default function Flip3Section() {
             variants={fadeUp}
             className="inline-block text-cinema-gold text-xs md:text-sm font-extrabold uppercase tracking-[0.3em] border border-cinema-gold/30 px-4 py-1 rounded-full bg-cinema-gold/10 backdrop-blur-sm"
           >
-            🎬 Upcoming Event · September 2026
+            🎬 Upcoming Event · September 19th, 2026
           </motion.span>
 
           {/* Main title */}
@@ -105,10 +105,10 @@ export default function Flip3Section() {
             className="flex flex-wrap justify-center gap-4 text-xs font-bold uppercase tracking-widest"
           >
             <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 backdrop-blur-sm">
-              📍 Lagos, Nigeria
+              📍 Freedom Park, Lagos Island
             </span>
             <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 backdrop-blur-sm">
-              📅 September 2026
+              📅 September 19th, 2026
             </span>
           </motion.div>
 
